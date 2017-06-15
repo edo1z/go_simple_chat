@@ -55,7 +55,6 @@ func createClient(conn net.Conn) {
 }
 
 func getName(conn net.Conn) []byte {
-	_ = conn.SetReadDeadline(time.Now().Add(5 * time.Minute))
 	buf := make([]byte, 560)
 	n, err := conn.Read(buf)
 	if err != nil {
